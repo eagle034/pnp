@@ -27,7 +27,11 @@ BuildConfig()
 
 find_package(Ceres REQUIRED )
 target_link_libraries(libpnp PUBLIC ${CERES_LIBRARIES})
-
+# https://answers.ros.org/question/207995/fatal-error-eigencore-no-such-file-or-directory-on-indigo/
+find_package(Eigen3 REQUIRED)
+include_directories(${EIGEN3_INCLUDE_DIR})
+#https://cmake.org/pipermail/cmake/2012-June/050792.html
+set(CMAKE_CXX_FLAGS ${CMAKE_CSS_FLAGS} "-fPIC")
 
 # the compiler does not care about having multiple equivalent but distinct includes, but many ides do...
 get_filename_component(PNP_PATH ${CMAKE_CURRENT_SOURCE_DIR} REALPATH)

@@ -13,7 +13,11 @@ In my experience the latter wins in every case except very high inlier noise, so
 ####################
 install ceres-solver from http://ceres-solver.org/installation.html
 Then I have performed the following commands to buid the project
+
 $mkdir build
+
 $cd build
+
 $cmake .. -DWITH_PYBIND11=ON
+
 $make
